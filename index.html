@@ -73,7 +73,7 @@
         
         <div class="btn">
             <button class="btn-yes" id="yesBtn">Yes</button>
-            <button class="btn-no" id="noBtn">If you say no, I will be really sad...</button>
+            <button class="btn-no" id="noBtn">No</button>
         </div>
 
         <div class="image-content">
@@ -86,11 +86,20 @@
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
         let scale = 1;
+        let distance = 5;
         
         noBtn.addEventListener('click', () => {
             scale += 0.5;
             yesBtn.style.scale = scale;
-            console.log('I will be really sad...');
+            distance += 20;
+            if (distance < 180) {
+                console.log('I will be really sad...');
+                noBtn.textContent = "If you say no, I will be really sad...";
+                noBtn.style.transform = `translateX(${distance}px)`;
+            } else {
+                yesBtn.style.scale = 30;
+                noBtn.style.display = 'none';
+            }
         });
 
         yesBtn.addEventListener('click', () => {
