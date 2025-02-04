@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my valentine?</title>
+    <link rel="icon" href="./84981-art-hulk-miles-morales-line-pixel-red.png" type="image/x-icon">
+</head>
+<style>
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: pink;
+    }
+
+    .content {
+        background-color: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .btn-yes {
+        padding: 10px 20px;
+        font-size: 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: green;
+        color: white;
+    }
+
+    .btn-no {
+        padding: 10px 20px;
+        font-size: 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: red;
+        color: white;
+    }
+
+    .image-content {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }   
+</style>
+</head>
+<body>
+    <div class="content">
+        <div class="title">
+            <h1 style="color: red;">Will you be my Valentine?</h1>
+        </div>
+        
+        <div class="btn">
+            <button class="btn-yes" id="yesBtn">Yes</button>
+            <button class="btn-no" id="noBtn">If you say no, I will be really sad...</button>
+        </div>
+
+        <div class="image-content">
+            <img src="./image.gif" alt="" width="500">
+        </div>
+    </div>
+
+    
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        let scale = 1;
+        
+        noBtn.addEventListener('click', () => {
+            scale += 0.5;
+            yesBtn.style.scale = scale;
+            console.log('I will be really sad...');
+        });
+
+        yesBtn.addEventListener('click', () => {
+            document.querySelector('.content').innerHTML = `
+                <h1 style="color: red;">Knew you would say yes</h1>
+                <img src="./result_imaeg.gif" alt="" width="500">
+            `;
+        });
+    </script>
+
+</body>
+</html>
